@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Advisor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='homepage.css') }}">
+    <link rel="stylesheet" href="../static/homepage.css">
+</head>
+<body>
+    <header>
+        <h1>GlObE GuRu</h1>
+        <nav class="navbar">
+            <ul>
+                <li><button class="btn" onclick="scrollToServices()">Services</button></li>
+                <li><button class="btn" onclick="scrollToBooking()">Booking</button></li>
+                <li><button class="btn" onclick="scrollToTestimonials()">Testimonials</button></li>
+                <li><a href="/signup" class="signup-btn">Sign-Up</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <button class="btn explore" onclick="scrollToServices()">Explore Now</button>
+    </section>
+
+    <div id="services" class="category-title">
+        <h5>Category</h5>
+        <h3>We Offer Best Services</h3>
+    </div>
+    <div class="services-card">
+        <div class="card">
+            <img src="{{ url_for('static', filename='service1.png') }}" alt="" width="75px">
+            <h4>Calculated Weather</h4>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='flight.png') }}" alt="" width="75px">
+            <h4>Cheapest Flights</h4>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='service3.png') }}" alt="" width="75px">
+            <h4>Best Offers</h4>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='service4.png') }}" alt="" width="75px">
+            <h4>Customization</h4>
+        </div>
+    </div>
+
+    <section id="testimonials">
+        <div class="category-title">
+            <h5>Testimonials</h5>
+            <h3>What Our Travelers Say</h3>
+        </div>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <p>“GlObE GuRu made my dream trip to Switzerland effortless. From flights to accommodation, everything was perfectly arranged!”</p>
+                <h4>- Riya Patel</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>“I got the best travel deals here! My trip to Bali was amazing, and the team helped me plan every detail.”</p>
+                <h4>- Karan Sharma</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>“This platform is a game-changer! The customer service is top-notch, and I always find the best travel options.”</p>
+                <h4>- Simran Verma</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking-steps">
+        <div class="category-title">
+            <h5>Booking</h5>
+            <h3>Steps to Book Your Trip</h3>
+        </div>
+        <div class="steps-container">
+            <div class="step">
+                <h4>Step 1</h4>
+                <p>Click on <strong>Sign-Up</strong> .</p>
+            </div>
+            <div class="step">
+                <h4>Step 2</h4>
+                <p>Fill out all required details and click <strong>Submit</strong>.</p>
+            </div>
+           
+            <div class="step">
+                <h4>Step 3</h4>
+                <p>View your desired destinations and confirm your booking.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function scrollToServices() {
+            document.getElementById("services").scrollIntoView({ behavior: "smooth" });
+        }
+        function scrollToTestimonials() {
+            document.getElementById("testimonials").scrollIntoView({ behavior: "smooth" });
+        }
+        function scrollToBooking() {
+            document.getElementById("booking-steps").scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+</body>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <h2>GlObE GuRu</h2>
+                <p>Your ultimate travel companion for seamless bookings and unforgettable trips.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Booking</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GlObE GuRu. All rights reserved.</p>
+        </div>
+    </footer>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='weather_data.css') }}">
+</head>
+<body>
+    <div class="home-container">
+        <a href="{{ url_for('home') }}" class="return-home">Return to Homepage</a>
+    </div>
+
+    <h1>Weather Data</h1>
+
+    {% if weather_data %}
+    <table>
+        <caption>Weather Data for Selected Locations</caption>
+        <thead>
+            <tr>
+                <th scope="col">Location Name</th>
+                <th scope="col">Image</th>
+                <th scope="col">Condition</th>
+                <th scope="col">Temperature High (°C)</th>
+                <th scope="col">Temperature Low (°C)</th>
+                <th scope="col">Precipitation (mm)</th>
+                <th scope="col">Humidity (%)</th>
+                <th scope="col">Wind Speed (km/h)</th>
+                <th scope="col">Description</th>
+                <th scope="col">Additional Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in weather_data %}
+            <tr>
+                <td data-label="Location Name">{{ row[0] }}</td>
+                <td data-label="Image"><img src="/images/{{ row[1] }}" alt="Image of {{ row[0] }}"></td>
+                <td data-label="Condition" {% if row[2] == 'Arid' %} class="arid-condition" title="Very dry with low humidity." {% endif %}>
+                    {{ row[2] }}
+                </td>
+                <td data-label="Temperature High">{{ row[3] }}</td>
+                <td data-label="Temperature Low">{{ row[4] }}</td>
+                <td data-label="Precipitation">{{ row[5] }}</td>
+                <td data-label="Humidity">{{ row[6] }}</td>
+                <td data-label="Wind Speed">{{ row[7] }}</td>
+                <td data-label="Description">{{ row[8] }}</td>
+                <td data-label="Additional Info">
+                    {% if row[2] == 'Arid' %}
+                        Very low rainfall and dry air.
+                    {% elif row[2] == 'Rainy' %}
+                        Heavy rainfall and high humidity.
+                    {% elif row[2] == 'Sunny' %}
+                        Clear skies and high temperatures.
+                    {% elif row[2] == 'Cloudy' %}
+                        Overcast skies and moderate temperatures.
+                    {% elif row[2] == 'Partly Cloudy' %}
+                        A mix of sun and clouds.
+                    {% elif row[2] == 'Mostly Sunny' %}
+                        Mostly clear skies with some clouds.
+                    {% elif row[2] == 'Snowy' %}
+                        Snowfall and very cold temperatures.
+                    {% else %}
+                        -
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No weather data available.</p>
+    {% endif %}
+
+    <p></p>  </body>
+</html>

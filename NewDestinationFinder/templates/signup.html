@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+</head>
+<body>
+    <section class="signup-container">
+        <h2>Sign Up</h2>
+        <form action="/signup" method="POST" class="signup-form">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <label for="season">Select Condition:</label>
+            <select name="season" id="season" required>
+                <option value="Sunny">Sunny</option>
+                <option value="Cloudy">Cloudy</option>
+                <option value="Partly Cloudy">Partly Cloudy</option>
+                <option value="Mostly Sunny">Mostly Sunny</option>
+                <option value="Snowy">Snowy</option>
+                <option value="Rainy">Rainy</option>
+                <option value="Arid">Arid</option>  </select>
+            </select><br>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </section>
+</body>
+</html>

@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+td img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.arid-condition {
+    background-color: #ffcc00;
+    color: #333;
+    font-weight: bold;
+}
+
+.return-home {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border: 2px solid black;
+    background: transparent;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.return-home:hover {
+    background: black;
+    color: white;
+}
+
+/* Signup Form Styles */
+.signup-form {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.signup-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.signup-form input, .signup-form select, .signup-form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.signup-form button {
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.signup-form button:hover {
+    background: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.signup-form p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.signup-form a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-form a:hover {
+    text-decoration: underline;
+}
